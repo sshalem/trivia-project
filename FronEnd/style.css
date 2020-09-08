@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* bootstrap by default makes it to "left",
+  since I want it to be in hebrew and I add in the HTML tag the "rtl" , 
+  thus i set the text align to unset which return to default */
+  text-align: unset;
+}
