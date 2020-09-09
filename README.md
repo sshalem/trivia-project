@@ -31,4 +31,4 @@ Question:
 Answer: 
 Git offers the command below: 
 
-$ git add --all 
+- git add --all 
