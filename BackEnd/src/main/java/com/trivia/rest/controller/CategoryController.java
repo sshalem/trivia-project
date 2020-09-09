@@ -18,7 +18,7 @@ import com.trivia.dao.CategoryDao;
 import com.trivia.model.Category;
 
 @RestController
-@RequestMapping(value = "/category")
+@RequestMapping("/category")
 @CrossOrigin("*")
 public class CategoryController {
 
@@ -26,9 +26,10 @@ public class CategoryController {
 	private CategoryDao categoryDao;
 
 	@PostMapping(value = "/create", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void createCategory(@RequestBody Category category) {
+	public Category createCategory(@RequestBody Category category) {
 		System.out.println(category);
 		categoryDao.createCategory(category);
+		return category;
 	}
 
 	@GetMapping("/getall")

@@ -11,12 +11,8 @@ import com.trivia.repository.CategoryRepository;
 @Service
 public class CategoryDaoImpl implements CategoryDao {
 
-	public CategoryRepository categoryRepo;
-
 	@Autowired
-	public CategoryDaoImpl(CategoryRepository categoryRepo) {
-		this.categoryRepo = categoryRepo;
-	}
+	public CategoryRepository categoryRepo;
 
 	@Override
 	public void createCategory(Category category) {
@@ -25,7 +21,7 @@ public class CategoryDaoImpl implements CategoryDao {
 
 	@Override
 	public Category findByCategoryName(String categoryName) {
-		return categoryRepo.findBycategoryName(categoryName);
+		return categoryRepo.findByCategoryName(categoryName);
 	}
 
 	@Override

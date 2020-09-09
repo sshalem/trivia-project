@@ -11,8 +11,8 @@ import com.trivia.model.Question;
 
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 
-	Category findBycategoryName(String categoryName);
+	Category findByCategoryName(String categoryName);
 
-	@Query("SELECT questions FROM Category category JOIN category.questionsList AS questions WHERE category.categoryName=:name")
+	@Query("SELECT q FROM Category category JOIN category.questionsList AS q WHERE category.categoryName=:name")
 	List<Question> getAllQuestionsPerCategory(@Param("name") String name);
 }

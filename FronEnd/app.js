@@ -1,40 +1,38 @@
 const categoryInput = document.getElementById("categoryInput");
 const categoryButtonUpdate = document.getElementById("categoryButton");
+const categoryList = document.getElementById("categoryList");
 
 categoryButtonUpdate.addEventListener("click", function () {
   const content = categoryInput.value;
 
   if (content !== "") {
+    category = {
+      categoryName: content,
+    };
+
     const options = {
       method: "post",
       headers: {
         Accept: "application/json",
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ categoryName: content }),
+      body: JSON.stringify(category),
     };
-    fetch("http://localhost:8080/category/create", options)
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+
+    ajax("http://localhost:8080/category/create", options);
   }
 });
 
-// post.addEventListener("click", () => {
-//   const options = {
-//     method: "post",
-//     headers: {
-//       Accept: "application/json",
-//       "Content-Type": "application/json"
-//     },
-//     body: JSON.stringify({ name: "post" })
-//   }
-//   fetch("http://localhost:8080/api/admin/post", options)
-//     .then(res => res.text())
-//     .then(data => {
-//       console.log(data);
-//       document.getElementById("msg").innerHTML = data;
-//     });
-// });
+categoryList.addEventListener("click", function () {
+  options = {};
+  ajax("http://localhost:8080/category/getall", options);
+});
+
+function ajax(url, options) {
+  fetch(url, options)
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+}
 
 // put.addEventListener("click", () => {
 //   const options = {
@@ -83,33 +81,5 @@ categoryButtonUpdate.addEventListener("click", function () {
 //                                          ${element.password} -
 //                                          ${element.email} <br>`;
 //       });
-//     });
-// });
-
-// admin.addEventListener("click", () => {
-//   fetch("http://localhost:8080/api/admin/getadmin")
-//     .then(res => res.text())
-//     .then(data => {
-//       console.log(data);
-//       document.getElementById("msg").innerHTML = data;
-//     });
-// });
-
-// manager.addEventListener("click", () => {
-//   fetch("http://localhost:8080/api/manager/getmanager")
-//     .then(res => res.text())
-//     .then(data => {
-//       console.log(data);
-//       document.getElementById("msg").innerHTML = data;
-//     });
-
-// });
-
-// profile.addEventListener("click", () => {
-//   fetch("http://localhost:8080/api/user/home")
-//     .then(res => res.text())
-//     .then(data => {
-//       console.log(data);
-//       document.getElementById("msg").innerHTML = data;
 //     });
 // });

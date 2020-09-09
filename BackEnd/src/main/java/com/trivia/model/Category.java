@@ -15,7 +15,7 @@ public class Category {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "cat_id")
+	@Column(name = "categoryId")
 	private long id;
 
 	private String categoryName;
@@ -35,14 +35,14 @@ public class Category {
 		this.id = id;
 	}
 
-	public String getCategory() {
+	public String getCategoryName() {
 		return categoryName;
 	}
 
-	public void setCategory(String category) {
-		this.categoryName = category;
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
- 
+
 	public List<Question> getQuestionsList() {
 		return questionsList;
 	}
@@ -61,7 +61,7 @@ public class Category {
 
 	@Override
 	public String toString() {
-		return "Category [id=" + id + ", category=" + categoryName + ", questionsList=" + questionsList + "]";
+		return "Category [id=" + id + ", categoryName=" + categoryName + ", questionsList=" + questionsList + "]";
 	}
 
 }
