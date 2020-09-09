@@ -14,15 +14,11 @@ create git clone in a local folder
 8. go to the clone folder by typing  cd:/"the created clone folder"  where the file of .git is present
 9. use following commands in the following order:
 
-  9.1. git status
-  
-  9.2. git add. - this will stage the file in the clone directory  (or git add --all see comment below)
-  
-  9.3. git status
-  
-  9.4. git commit -m "the message I want" 
-  
-  9.5. git push
+  - 9.1. git status
+  - 9.2. git add. - this will stage the file in the clone directory  (or git add --all see comment below)
+  - 9.3. git status
+  - 9.4. git commit -m "the message I want" 
+  - 9.5. git push
   
   
   
