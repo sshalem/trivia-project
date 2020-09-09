@@ -20,10 +20,7 @@ create git clone in a local folder
   9.4. git commit -m "the message I want" 
   9.5. git push
   
- 
-
-
-
+  
 here's a problem with the "git add ." command. 
 Since we're currently working in the root directory, "git add ." will only add files located in the root directory.  
 But the root directory may contain many other directories with files.  
