@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Category {
 
@@ -21,10 +23,16 @@ public class Category {
 	private String categoryName;
 
 	@OneToMany(mappedBy = "category")
+	@JsonIgnore
 	private List<Question> questionsList;
 
 	public Category() {
 		super();
+	}
+
+	public Category(String categoryName) {
+		super();
+		this.categoryName = categoryName;
 	}
 
 	public long getId() {

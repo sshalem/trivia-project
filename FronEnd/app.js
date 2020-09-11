@@ -19,13 +19,21 @@ categoryButtonUpdate.addEventListener("click", function () {
       body: JSON.stringify(category),
     };
 
-    ajax("http://localhost:8080/category/create", options);
+    fetch("http://localhost:8080/category/create", options)
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   }
 });
 
 categoryList.addEventListener("click", function () {
-  options = {};
-  ajax("http://localhost:8080/category/getall", options);
+  fetch("http://localhost:8080/category/getall")
+    .then((res) => res.json())
+    .then((data) => {
+      data.forEach((element) => {
+        console.log(element.categoryName);
+        document.getElementById("gridContainer").innerHTML += `<div class="grid-element">${element.categoryName}</div>`;
+      });
+    });
 });
 
 function ajax(url, options) {

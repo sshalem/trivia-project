@@ -5,5 +5,31 @@ body {
   /* bootstrap by default makes it to "left",
   since I want it to be in hebrew and I add in the HTML tag the "rtl" , 
   thus i set the text align to unset which return to default */
-  text-align: unset;
+  text-align: center;
+}
+.container {
+  height: 100vh;
+  width: 75%;
+  margin: auto;
+}
+.header-trivia {
+}
+
+.cell {
+  font-size: 25px;
+  text-align: center;
+  border: 2px solid red;
+  padding: 10px 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 2px;
+}
+
+.grid-element {
+  height: 200px;
+  width: 200px;
+  border: 1px solid red;
 }
