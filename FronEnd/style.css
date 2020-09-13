@@ -17,12 +17,13 @@ body {
 /* ------------------------------- */
 .header {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: lavender;
+  background-color: rgb(11, 117, 255);
+  color: white;
 }
 
 .header__main {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: lavender;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  /* background-color: rgb(11, 117, 255);*/
 }
 
 .header__title {
@@ -41,22 +42,46 @@ body {
   font-size: 2rem;
 }
 
+.create-category__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .create-category__input {
   font-size: 2rem;
-  color: blue;
+  background-color: rgb(11, 117, 255);
+  border-radius: 10px;
+  outline: 0;
+  border-color: blue;
 }
 
 .create-category__input::placeholder {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-style: italic;
+  color: white;
+  text-align: center;
 }
 
 .create-category__input:hover {
-  background-color: greenyellow;
+  background-color: lightblue;
+  color: rgb(11, 117, 255);
 }
 
-#categoryButton {
+.create-category__btn {
   font-size: 1rem;
+  background-color: rgb(11, 117, 255);
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 25%;
+  cursor: pointer;
+}
+
+.create-category__btn:hover {
+  border: 1px solid rgb(11, 117, 255);
+  background-color: white;
+  color: rgb(11, 117, 255);
 }
 
 /* ------------------------------- */
@@ -65,8 +90,27 @@ body {
 .show-category {
 }
 
-.show-category__categoryList {
+.show-category__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.show-category__categoryList {
+  background-color: rgb(11, 117, 255);
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 25%;
+  cursor: pointer;
+}
+
+.show-category__categoryList:hover {
+  border: 1px solid rgb(11, 117, 255);
+  background-color: white;
+  color: rgb(11, 117, 255);
+}
+
 .show-category__grid {
   display: grid;
   grid-template-columns: 1fr;

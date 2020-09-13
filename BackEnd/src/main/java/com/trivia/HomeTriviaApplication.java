@@ -44,6 +44,9 @@ public class HomeTriviaApplication implements CommandLineRunner {
 
 		Category math = new Category("חשבון");
 		categoryDao.createCategory(math);
+		
+		Category shapes = new Category("צורות");
+		categoryDao.createCategory(shapes);
 
 		Category animals = new Category("חיות");
 		categoryDao.createCategory(animals);
