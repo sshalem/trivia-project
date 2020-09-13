@@ -26,12 +26,12 @@ categoryButtonUpdate.addEventListener("click", function () {
 });
 
 categoryList.addEventListener("click", function () {
+  document.getElementById("gridContainer").innerHTML = "";
   fetch("http://localhost:8080/category/getall")
     .then((res) => res.json())
     .then((data) => {
       data.forEach((element) => {
-        console.log(element.categoryName);
-        document.getElementById("gridContainer").innerHTML += `<div class="grid-element">${element.categoryName}</div>`;
+        document.getElementById("gridContainer").innerHTML += `<div class="show-category__grid-element">${element.categoryName}</div>`;
       });
     });
 });

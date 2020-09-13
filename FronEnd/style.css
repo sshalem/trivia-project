@@ -12,24 +12,64 @@ body {
   width: 75%;
   margin: auto;
 }
-.header-trivia {
+
+/* ------------------------------- */
+/* ---------   header       ------ */
+/* ------------------------------- */
+.header {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: lavender;
+  position: absolute;
 }
 
-.cell {
-  font-size: 25px;
-  text-align: center;
-  border: 2px solid red;
-  padding: 10px 0;
+.header__main {
+  position: fixed;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: lavender;
 }
 
-.grid-container {
+.header__title {
+  font-size: 5rem;
+  word-spacing: 60px;
+  letter-spacing: 40px;
+}
+
+/* ------------------------------- */
+/* ---------create-category ------ */
+/* ------------------------------- */
+
+.create-category {
+}
+.create-category__content {
+  font-size: 2rem;
+}
+
+.create-category__input {
+  font-size: 2rem;
+  color: blue;
+}
+
+.create-category__input::placeholder {
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.create-category__input:hover {
+  background-color: greenyellow;
+}
+
+#categoryButton {
+  font-size: 1rem;
+}
+
+.show-category__grid {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 2px;
 }
 
-.grid-element {
+.show-category__grid-element {
   height: 200px;
-  width: 200px;
+  /* width: 100%; */
   border: 1px solid red;
 }

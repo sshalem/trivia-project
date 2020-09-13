@@ -53,21 +53,21 @@ public class HomeTriviaApplication implements CommandLineRunner {
 
 		Category nature = new Category("טבע");
 		categoryDao.createCategory(nature);
-//
-//		Category whatIsItMadeOf = new Category("ממה זה עשוי");
-//		categoryDao.createCategory(whatIsItMadeOf);
-//
-//		Category family = new Category("משפחה");
-//		categoryDao.createCategory(family);
-//
-//		Category vehicles = new Category("תחבורה");
-//		categoryDao.createCategory(vehicles);
-//
-//		Category safety = new Category("בטיחות");
-//		categoryDao.createCategory(safety);
-//
-//		Category sport = new Category("ספורט");
-//		categoryDao.createCategory(sport);
+
+		Category whatIsItMadeOf = new Category("ממה זה עשוי");
+		categoryDao.createCategory(whatIsItMadeOf);
+
+		Category family = new Category("משפחה");
+		categoryDao.createCategory(family);
+
+		Category vehicles = new Category("תחבורה");
+		categoryDao.createCategory(vehicles);
+
+		Category safety = new Category("בטיחות");
+		categoryDao.createCategory(safety);
+
+		Category sport = new Category("ספורט");
+		categoryDao.createCategory(sport);
 
 	}
 
