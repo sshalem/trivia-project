@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.trivia.dao.CategoryDao;
 import com.trivia.model.Category;
+import com.trivia.model.Question;
 
 @SpringBootApplication
 public class HomeTriviaApplication implements CommandLineRunner {
@@ -22,6 +23,16 @@ public class HomeTriviaApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		Category food = new Category("אוכל");
+
+		Question chalva = new Question();
+		chalva.setQuestion("ממה עשוי חלבה");
+
+		Question capital = new Question();
+		capital.setQuestion(" בירת ישראל");
+
+		food.addQuestion(chalva);
+		food.addQuestion(capital);
+
 		categoryDao.createCategory(food);
 
 		Category foodWhatIsItMadeOf = new Category("ממה המאכל עשוי");
@@ -38,13 +49,13 @@ public class HomeTriviaApplication implements CommandLineRunner {
 
 		Category holidays = new Category("חגים");
 		categoryDao.createCategory(holidays);
-		
+
 		Category hebrew = new Category("עיברית");
 		categoryDao.createCategory(hebrew);
 
 		Category math = new Category("חשבון");
 		categoryDao.createCategory(math);
-		
+
 		Category shapes = new Category("צורות");
 		categoryDao.createCategory(shapes);
 

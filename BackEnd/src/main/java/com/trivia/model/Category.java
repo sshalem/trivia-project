@@ -3,8 +3,10 @@ package com.trivia.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,8 +24,8 @@ public class Category {
 
 	private String categoryName;
 
-	@OneToMany(mappedBy = "category")
-	@JsonIgnore
+	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//	@JsonIgnore
 	private List<Question> questionsList;
 
 	public Category() {
@@ -60,8 +62,8 @@ public class Category {
 	}
 
 	public void addQuestion(Question question) {
-		if (this.questionsList == null) {
-			this.questionsList = new ArrayList<>();
+		if (questionsList == null) {
+			questionsList = new ArrayList<>();
 		}
 		questionsList.add(question);
 		question.setCategory(this);

@@ -15,7 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.trivia.dao.CategoryDao;
+import com.trivia.dao.CategoryDaoImpl;
+import com.trivia.dao.QuestionDao;
+import com.trivia.dao.QuestionDaoImpl;
 import com.trivia.model.Category;
+import com.trivia.model.Question;
 
 @RestController
 @RequestMapping("/category")
@@ -23,27 +27,32 @@ import com.trivia.model.Category;
 public class CategoryController {
 
 	@Autowired
-	private CategoryDao categoryDao;
+	private CategoryDaoImpl categoryDaoImpl;
 
 	@PostMapping(value = "/create", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Category createCategory(@RequestBody Category category) {
 		System.out.println(category);
-		categoryDao.createCategory(category);
+		categoryDaoImpl.createCategory(category);
 		return category;
 	}
 
 	@GetMapping("/getall")
 	public List<Category> getAll() {
-		return categoryDao.getAllCategories();
+		return categoryDaoImpl.getAllCategories();
+	}
+
+	@GetMapping(value = "/{categoryName}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Question> getQUestionsByCategoryName(@PathVariable("categoryName") String categoryName) {
+		return categoryDaoImpl.getAllQuestionsPerCategory(categoryName);
 	}
 
 	@PutMapping("/update")
 	public void updateCategory(Category category) {
-		categoryDao.updateCategory(category);
+		categoryDaoImpl.updateCategory(category);
 	}
 
 	@DeleteMapping("/delete/{categoryname}")
 	public void removeCategory(@PathVariable("categoryname") String categoryname) {
-		categoryDao.deleteCategory(categoryname);
+		categoryDaoImpl.deleteCategory(categoryname);
 	}
 }

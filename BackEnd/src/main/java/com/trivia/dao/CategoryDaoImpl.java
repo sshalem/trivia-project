@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.trivia.model.Category;
+import com.trivia.model.Question;
 import com.trivia.repository.CategoryRepository;
 
 @Service
@@ -37,6 +38,11 @@ public class CategoryDaoImpl implements CategoryDao {
 	@Override
 	public List<Category> getAllCategories() {
 		return categoryRepo.findAll();
+	}
+
+	@Override
+	public List<Question> getAllQuestionsPerCategory(String name) {
+		return categoryRepo.getAllQuestionsPerCategory(name);
 	}
 
 }

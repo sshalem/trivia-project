@@ -3,6 +3,7 @@ package com.trivia.dao;
 import java.util.List;
 
 import com.trivia.model.Category;
+import com.trivia.model.Question;
 
 public interface CategoryDao {
 
@@ -20,4 +21,7 @@ public interface CategoryDao {
 
 	// get all
 	List<Category> getAllCategories();
+
+	// Get All question Per Category
+	List<Question> getAllQuestionsPerCategory(String name);
 }
