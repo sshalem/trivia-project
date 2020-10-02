@@ -1,58 +1,18 @@
+import { loadCategories, createCategory } from "./js/ajax.js";
+
 const categoryInput = document.getElementById("categoryInput");
-const categoryButtonUpdate = document.getElementById("categoryButton");
-const categoryList = document.getElementById("categoryList");
+const categoryCreateBtn = document.getElementById("categoryButton");
+const listOfCagetories = document.getElementById("gridContainer");
 
-categoryButtonUpdate.addEventListener("click", function () {
+window.addEventListener("DOMContentLoaded", function () {
+    listOfCagetories.innerHTML = "";
+    loadCategories(listOfCagetories);
+});
+
+categoryCreateBtn.addEventListener("click", function () {
     const content = categoryInput.value;
-
-    if (content !== "") {
-        category = {
-            categoryName: content,
-        };
-
-        const options = {
-            method: "post",
-            headers: {
-                Accept: "application/json",
-                "Content-type": "application/json",
-            },
-            body: JSON.stringify(category),
-        };
-
-        fetch("http://localhost:8080/category/create", options)
-            .then((res) => res.json())
-            .then((data) => console.log(data));
-    }
+    createCategory(content);
 });
-
-categoryList.addEventListener("click", function () {
-    document.getElementById("gridContainer").innerHTML = "";
-    fetch("http://localhost:8080/category/getall")
-        .then((res) => res.json())
-        .then((data) => {
-            data.forEach((element) => {
-                document.getElementById(
-                    "gridContainer"
-                ).innerHTML += `<div class="show-category__grid-element"><a href="${element.categoryName}">${element.categoryName}</a></div>`;
-            });
-            // this will add to each Category
-            // a click button to fetch all the questions per Category
-            // const category = document.querySelectorAll(".show-category__grid-element");
-            // category.forEach((item) => {
-            //     item.addEventListener("click", function () {
-            //         const options = {};
-            //         const url = `http://localhost:8080/category/${item.innerHTML}`;
-            //         ajax(url);
-            //     });
-            // });
-        });
-});
-
-function ajax(url, options) {
-    fetch(url, options)
-        .then((res) => res.json())
-        .then((data) => console.log(data));
-}
 
 // put.addEventListener("click", () => {
 //   const options = {

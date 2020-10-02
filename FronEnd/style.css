@@ -117,11 +117,11 @@ body {
     grid-gap: 2px;
 }
 
-.show-category__grid-element {
+.show-category__content {
     height: 200px;
     border: 1px solid red;
 }
-.show-category__grid-element:hover {
+.show-category__content:hover {
     height: 200px;
     border: 3px solid green;
     cursor: pointer;
